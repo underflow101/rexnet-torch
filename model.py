@@ -41,7 +41,7 @@ def _add_conv_swish(out, in_channels, channels, kernel=1, stride=1, pad=0, num_g
 
 class SE(nn.Module):
     def __init__(self, in_channels, channels, se_ratio=12):
-        super(SE, self).__init__()
+        super().__init__()
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
         self.fc = nn.Sequential(
             nn.Conv2d(in_channels, channels // se_ratio, kernel_size=1, padding=0),
@@ -59,7 +59,7 @@ class SE(nn.Module):
 
 class LinearBottleneck(nn.Module):
     def __init__(self, in_channels, channels, t, stride, use_se=True, se_ratio=12, **kwargs):
-        super(LinearBottleneck, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self.use_shortcut = stride == 1 and in_channels <= channels
         self.in_channels = in_channels
         self.out_channels = channels
