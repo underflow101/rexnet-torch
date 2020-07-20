@@ -58,8 +58,7 @@ class SE(nn.Module):
 
 
 class LinearBottleneck(nn.Module):
-    def __init__(self, in_channels, channels, t, stride, use_se=True, se_ratio=12,
-                 **kwargs):
+    def __init__(self, in_channels, channels, t, stride, use_se=True, se_ratio=12, **kwargs):
         super(LinearBottleneck, self).__init__(**kwargs)
         self.use_shortcut = stride == 1 and in_channels <= channels
         self.in_channels = in_channels
@@ -92,12 +91,9 @@ class LinearBottleneck(nn.Module):
 
 
 class ReXNetV1(nn.Module):
-    def __init__(self, input_ch=16, final_ch=180, width_mult=1.0, depth_mult=1.0, classes=1000,
-                 use_se=True,
-                 se_ratio=12,
-                 dropout_ratio=0.2,
-                 bn_momentum=0.9):
-        super(ReXNetV1, self).__init__()
+    def __init__(self, input_ch=16, final_ch=180, width_mult=1.0, depth_mult=1.0, classes=4, use_se=True,
+                 se_ratio=12, dropout_ratio=0.2, bn_momentum=0.9):
+        super().__init__()
 
         layers = [1, 2, 2, 3, 3, 5]
         strides = [1, 2, 2, 2, 1, 2]
