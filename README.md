@@ -2,6 +2,7 @@
 Repository of NAVER Clova AI's ReXNet in practical manner for my own study
 
 Original Github: https://github.com/clovaai/rexnet/
+
 @article{han2020rexnet,
     title={{ReXNet}: Diminishing Representational Bottleneck on Convolutional Neural Network
 },
