@@ -16,6 +16,8 @@ import torch.optim as optim
 import torch.nn.functional as F
 from torch.autograd import Variable
 
+from torchsummary import summary
+
 from model import ReXNetV1
 
 from hyperparameter import *
@@ -141,6 +143,8 @@ if __name__ == '__main__':
     config = CONFIG()
     
     model = model.cuda()
+    
+    summary(model, (3, 224, 224))
 
     avg_loss = list()
     best_accuracy = 0.0

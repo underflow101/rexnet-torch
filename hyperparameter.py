@@ -7,8 +7,8 @@
 
 CLASSES = ('others', 'phoneWithHand', 'writing', 'sleep')
 
-EPOCHS = 1
-BATCH_SIZE = 32
+EPOCHS = 20
+BATCH_SIZE = 4
 NUM_CLASSES = 4
 IMG_SIZE = 224
 IN_CHANNELS = 3
@@ -28,8 +28,8 @@ class CONFIG():
     lr = 0.5
     momentum = 0.9
     weight_decay = 1e-5
-    num_epochs = 1
-    batch_size = 32
+    num_epochs = 20
+    batch_size = 4
     pretrained_model = None
 
     # misc

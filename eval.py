@@ -28,8 +28,9 @@ from hyperparameter import *
 def main():
     device = torch.device('cpu')
     model = ReXNetV1(width_mult=0.7)
-    weights = torch.load('rexnet_torch.pth', map_location=torch.device('cpu'))
+    weights = torch.load('./pretrained/rexnet_quantREAL.pth', map_location=torch.device('cpu'))
     model.load_state_dict(weights)
+    #model = torch.jit.load('./pretrained/rexnet_quantREAL.pth')
     model.eval()
     
     config = CONFIG()
@@ -68,7 +69,7 @@ def main():
             time1 = (t2 - t1) / freq
             frame_rate_calc = 1 / time1
             sumsum += frame_rate_calc
-            pred = scores.data.max(1)[1]
+            #pred = scores.data.max(1)[1]
 
         sumsum /= 100
         print('others: ', end='')
